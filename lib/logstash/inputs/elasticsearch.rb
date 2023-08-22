@@ -328,7 +328,7 @@ class LogStash::Inputs::Elasticsearch < LogStash::Inputs::Base
     end
 
     decorate(event)
-
+    @logger.info("...push_hit...", :event => event , :docinfo_target => docinfo_target)
     output_queue << event
   end
 
